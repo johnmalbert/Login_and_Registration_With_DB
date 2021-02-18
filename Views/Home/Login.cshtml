@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using LoginRegWDb.Models
+@model LoginUser
+<div class="text-center">
+    <h1 class="display-4">User Login</h1>
+</div>
+<div class="container p-5">
+
+<form asp-action="AttemptLogin" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Email"></span>
+        <label asp-for="Email">Email address</label>
+        <input class="form-control" asp-for="Email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <span style="color: red;" asp-validation-for="Password"></span>
+        <label asp-for="Password">Password</label>
+        <input class="form-control" asp-for="Password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
